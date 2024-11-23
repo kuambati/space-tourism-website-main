@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination-europa</title>
+    <link rel="stylesheet" href="destination-style.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellefair&family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="outer-container">
+      <header>
+        <button class="logo-btn" onclick="window.open('index.html','_self');">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <g fill="none" fill-rule="evenodd">
+              <circle cx="24" cy="24" r="22" fill="#FFF" />
+              <path
+                fill="#0B0D17"
+                d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+              />
+            </g>
+          </svg>
+        </button>
+
+        <button
+          aria-controls="navigation-container"
+          class="toggle-mobile-nav"
+          aria-expanded="false"
+          onclick="togglenav()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21">
+            <g fill="#D0D6F9" fill-rule="evenodd">
+              <path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z" />
+            </g>
+          </svg>
+        </button>
+
+        <nav>
+          <ul
+            class="navigation-container underlined-elements"
+            data-visible="false"
+          >
+            <li>
+              <a href="index.html"
+                ><span aria-hidden="true">00</span><span>Home</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="destination.html"
+                ><span aria-hidden="true">01</span><span>Destination</span></a
+              >
+            </li>
+            <li>
+              <a href="crew.html"
+                ><span aria-hidden="true">02</span><span>Crew</span></a
+              >
+            </li>
+            <li>
+              <a href="technology.html"
+                ><span aria-hidden="true">03</span><span>Technology</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="main-content">
+        <div class="fp">
+          <span class="number">01</span> <span>Pick your destination</span>
+        </div>
+        <img
+          class="dest-img"
+          src="space-tourism-website-main/starter-code/assets/destination/image-europa.png"
+          alt="europa"
+        />
+
+        <nav class="select-dest">
+          <ul class="dest-nav underlined-elements underlined-elements-mobile">
+            <li>
+              <a href="destination.html"><span>MOON</span></a>
+            </li>
+            <li>
+              <a href="destination-mars.html"><span>MARS</span></a>
+            </li>
+            <li class="active">
+              <a href="destination-europa.html"><span>EUROPA</span></a>
+            </li>
+            <li>
+              <a href="destination-titan.html"><span>TITAN</span></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sp">
+          <p class="sp1">EUROPA</p>
+          <p class="sp2">
+            The smallest of the four Galilean moons orbiting Jupiter, Europa is
+            a winter lover’s dream. With an icy surface, it’s perfect for a bit
+            of ice skating, curling, hockey, or simple relaxation in your snug
+            wintery cabin.
+          </p>
+        </div>
+        <div class="tp">
+          <p class="tp1">Avg. distance</p>
+          <p class="tp2">628 mil. km</p>
+        </div>
+        <div class="fop">
+          <p class="fop1">Est. travel time</p>
+          <p class="fop2">3 years</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script href="destination.js"></script> -->
+    <script src="jscript.js"></script>
+  </body>
+</html>

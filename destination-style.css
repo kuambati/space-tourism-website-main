@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "barlow";
+  font-size: 14px;
+}
+body {
+  background-image: url(space-tourism-website-main/starter-code/assets/destination/background-destination-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+html,
+body {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+header {
+  grid-area: alias-header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4% 0% 2% 4%;
+  position: sticky;
+  top: 0;
+}
+.navigation-container {
+  display: flex;
+  align-content: space-between;
+  font-family: "bellefair";
+  gap: 3em;
+  list-style: none;
+  text-transform: uppercase;
+  background: hsl(0 0 100% / 0.1);
+  backdrop-filter: blur(1rem);
+  padding-inline: clamp(5rem, 10vw, 15rem);
+  background-size: cover;
+}
+.toggle-mobile-nav {
+  display: none;
+}
+.fp {
+  grid-area: p1;
+}
+.dest-img {
+  grid-area: dest-image;
+}
+.select-dest {
+  grid-area: navi;
+}
+.sp {
+  grid-area: p2;
+  line-height: 180%;
+  border-bottom: solid rgba(255, 255, 255, 0.4) 1px;
+}
+.tp {
+  grid-area: p3;
+  text-wrap: balance;
+}
+.fop {
+  grid-area: p4;
+}
+.dest-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  width: 280px;
+  justify-self: center;
+}
+/* ------------
+     STYLES
+--------------- */
+.fp > span {
+  font-size: 1.2rem;
+}
+.underlined-elements > * {
+  padding: 8% 0;
+  border-bottom: solid hsl(0 0 100% / 0) 3.5px;
+}
+
+.underlined-elements > *:hover,
+.underlined-elements > *:focus {
+  border-color: hsl(0 0 100% / 0.5);
+}
+.underlined-elements > .active {
+  border-color: hsl(0 0 100% / 1);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+.navigation-container a {
+  text-decoration: none;
+}
+.navigation-container a > span {
+  font-family: "barlow";
+  font-weight: 200;
+}
+.navigation-container a > [aria-hidden="true"] {
+  font-weight: 700;
+  margin-inline-end: 0.5em;
+}
+.navigation-container[data-visible="true"] {
+  transform: translateX(0%);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+.number {
+  opacity: 0.5;
+  font-weight: 700;
+}
+.dest-nav a {
+  text-decoration: none;
+}
+.dest-nav a span {
+  font-family: "barlow";
+  font-weight: 200;
+  font-size: 1.1rem;
+}
+.sp1 {
+  font-size: 4rem;
+  font-family: "bellefair";
+  margin-bottom: 5%;
+}
+.sp2 {
+  font-weight: 200;
+}
+.fp {
+  text-transform: uppercase;
+  font-weight: 200;
+}
+.fop .fop2,
+.tp .tp2 {
+  font-family: "bellefair";
+  text-transform: uppercase;
+  font-size: 2rem;
+  justify-self: center;
+}
+.fop .fop1,
+.tp .tp1 {
+  font-weight: 200;
+  text-transform: uppercase;
+  justify-self: center;
+  padding-bottom: 5%;
+}
+.fp,
+.dest-img,
+.sp,
+.tp,
+.fop {
+  justify-self: center;
+}
+.fp .number {
+  margin-right: 15px;
+}
+.sp2 {
+  font-size: 1.2rem;
+}
+
+/*
+===============
+BREAKPOINTS
+===============
+*/
+
+@media (min-width: 576px) and (max-width: 992px) {
+  body {
+    background-image: url(space-tourism-website-main/starter-code/assets/destination/background-destination-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .navigation-container a > [aria-hidden="true"] {
+    display: none;
+  }
+  .main-content {
+    display: grid;
+    grid-template-rows: auto 230px repeat(3, auto);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "p1 p1"
+      "dest-image dest-image"
+      "navi navi"
+      "p2 p2"
+      "p3 p4";
+    row-gap: 30px;
+    justify-content: center;
+    padding: 4% 6%;
+    /* align-items: center; */
+  }
+  img {
+    max-width: 200px;
+  }
+  .sp {
+    text-align: center;
+    padding: 5% 8%;
+  }
+  .fp {
+    justify-self: left;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    background-image: url(space-tourism-website-main/starter-code/assets/destination/background-destination-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .navigation-container {
+    position: fixed;
+    flex-direction: column;
+    inset: 0 0 0 30%;
+    gap: 2rem;
+    padding: min(25vh, 10rem) 3em;
+    background: hsl(0 0 100% / 0.1);
+    backdrop-filter: blur(1rem);
+    z-index: 1;
+    transform: translateX(100%);
+  }
+
+  .toggle-mobile-nav {
+    display: block;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    z-index: 2;
+  }
+  .main-content {
+    display: grid;
+    grid-template-rows: 1fr 140px 1fr 3fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "p1"
+      "dest-image"
+      "navi"
+      "p2"
+      "p3"
+      "p4";
+    row-gap: 10px;
+    justify-content: center;
+    padding: 4% 10%;
+  }
+
+  .sp {
+    text-align: center;
+    padding: 5% 10%;
+  }
+  img {
+    max-width: 120px;
+  }
+  .underlined-elements > * {
+    padding: 0;
+    border-bottom: solid hsl(0 0 100% / 0) 3.5px;
+  }
+  .underlined-elements > *:hover,
+  .underlined-elements > *:focus {
+    border-color: hsl(0 0 100% / 0);
+  }
+  .underlined-elements > .active {
+    border-color: hsl(0 0 100% / 0);
+  }
+  .underlined-elements-mobile > * {
+    padding: 4% 0;
+    border-bottom: solid hsl(0 0 100% / 0) 3.5px;
+  }
+  .underlined-elements-mobile > *:hover,
+  .underlined-elements-mobile > *:focus {
+    border-color: hsl(0 0 100% / 0.5);
+  }
+  .underlined-elements-mobile > .active {
+    border-color: hsl(0 0 100% / 1);
+  }
+}
+@media (min-width: 992px) {
+  .main-content {
+    display: grid;
+    grid-template-rows: auto auto repeat(2, auto);
+    grid-template-columns: 600px auto auto;
+    grid-template-areas:
+      "p1 p1 p1"
+      "dest-image navi navi"
+      "dest-image p2 p2"
+      "dest-image p3 p4";
+    row-gap: 20px;
+    justify-content: center;
+    padding: 4% 10%;
+  }
+  img {
+    width: 350px;
+    height: auto;
+  }
+  .fp {
+    margin-bottom: 10%;
+  }
+  .fp,
+  .sp,
+  .tp,
+  .dest-nav {
+    justify-self: left;
+  }
+}
