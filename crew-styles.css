@@ -282,6 +282,7 @@ button:hover {
   }
   .sp1 {
     margin-bottom: 10px;
+    z-index: -1;
   }
 }
 
