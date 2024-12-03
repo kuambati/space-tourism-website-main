@@ -302,6 +302,7 @@ BREAKPOINTS
     border-color: hsl(0 0 100% / 0);
   }
 }
+
 @media (min-width: 992px) {
   .main-container {
     display: grid;
@@ -315,5 +316,38 @@ BREAKPOINTS
       "cont explore";
     align-content: stretch;
     min-height: 100vh;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    right: 63%;
+    bottom: 42%;
+    width: clamp(10rem, 25vw, 25rem);
+    height: 1px;
+    background-color: hsl(0 0 100% / 0.5);
+  }
+}
+@media (min-width: 1200px) {
+  .main-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    /* row-gap: 20px; */
+    padding: 5% 5% 0 5%;
+    justify-content: center;
+    grid-template-areas:
+      "cont explore"
+      "cont explore";
+    align-content: stretch;
+    min-height: 100vh;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 42%;
+    width: clamp(20rem, 40vw, 40rem);
+    height: 1px;
+    background-color: hsl(0 0 100% / 0.5);
   }
 }

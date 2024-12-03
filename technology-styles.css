@@ -140,7 +140,7 @@ a {
   text-transform: uppercase;
 }
 .sp1 {
-  opacity: 0.5;
+  color: hsl(0 0 100% / 0.5);
 }
 
 .tp {
@@ -152,7 +152,7 @@ a {
   --------------*/
 
 .number {
-  opacity: 0.5;
+  color: hsl(0 0 100% / 0.5);
   font-weight: 700;
 }
 .letter-spacing-1 {
@@ -341,4 +341,56 @@ BREAKPOINTS
   /* .tech-img {
     width: 700px;
   } */
+  header::after {
+    content: "";
+    position: absolute;
+    right: 63%;
+    bottom: 42%;
+    width: clamp(10rem, 25vw, 25rem);
+    height: 1px;
+    background-color: hsl(0 0 100% / 0.5);
+  }
+}
+@media (min-width: 1200px) {
+  .tech-img-tablet {
+    display: none;
+  }
+  .main-container {
+    display: grid;
+    grid-template-rows: auto 150px 1fr;
+    grid-template-columns: 100px 500px auto;
+    grid-template-areas:
+      "p1 p1 tech-image"
+      "nav p2 tech-image"
+      "nav p3 tech-image";
+    column-gap: 30px;
+    padding: 4% 10%;
+  }
+  .number-nav {
+    flex-direction: column;
+    height: 200px;
+    justify-self: center;
+  }
+  .fp {
+    margin-bottom: 70px;
+  }
+  .sp1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+  }
+  .sp2 {
+    font-size: 4rem;
+  }
+  .tp {
+    align-self: flex-start;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 42%;
+    width: clamp(20rem, 40vw, 40rem);
+    height: 1px;
+    background-color: hsl(0 0 100% / 0.5);
+  }
 }
