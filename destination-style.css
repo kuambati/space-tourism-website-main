@@ -115,7 +115,7 @@ button:hover {
   cursor: pointer;
 }
 .number {
-  opacity: 0.5;
+  color: hsl(0 0 100% / 0.5);
   font-weight: 700;
 }
 .dest-nav a {
@@ -305,5 +305,51 @@ BREAKPOINTS
   .tp,
   .dest-nav {
     justify-self: left;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    right: 63%;
+    bottom: 42%;
+    width: clamp(10rem, 25vw, 25rem);
+    height: 1px;
+    background-color: hsl(0 0 100% / 0.5);
+  }
+}
+@media (min-width: 1200px) {
+  .main-content {
+    display: grid;
+    grid-template-rows: auto auto repeat(2, auto);
+    grid-template-columns: 600px auto auto;
+    grid-template-areas:
+      "p1 p1 p1"
+      "dest-image navi navi"
+      "dest-image p2 p2"
+      "dest-image p3 p4";
+    row-gap: 20px;
+    justify-content: center;
+    padding: 4% 10%;
+  }
+  img {
+    width: 350px;
+    height: auto;
+  }
+  .fp {
+    margin-bottom: 10%;
+  }
+  .fp,
+  .sp,
+  .tp,
+  .dest-nav {
+    justify-self: left;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 42%;
+    width: clamp(20rem, 40vw, 40rem);
+    height: 1px;
+    background-color: hsl(0 0 100% / 0.5);
   }
 }
